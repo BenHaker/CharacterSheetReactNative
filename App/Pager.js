@@ -6,6 +6,7 @@ import Attributes from './Attributes'
 import Battle from './Battle'
 import Equipment from './Equipment'
 import SpellBook from './SpellBook'
+import Treasure from './Treasure'
 
 const styles = StyleSheet.create({ container: { flex: 1 }})
 
@@ -15,7 +16,7 @@ export default class Pager extends Component {
         this.navigator = this.props.navigator;
         this.onPageSelected = this.onPageSelected.bind(this);
         this.currentPage = 0;
-        this.maxPage = 4;
+        this.maxPage = 5;
     }
 
     onPageSelected = (e) => {
@@ -54,6 +55,9 @@ export default class Pager extends Component {
                     </View>
                     <View>
                         <Equipment/>
+                    </View>
+                    <View>
+                        <Treasure/>
                     </View>
                     <View>
                         <SpellBook/>
