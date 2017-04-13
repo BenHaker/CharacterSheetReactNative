@@ -4,7 +4,7 @@ import { Styles } from './Styles'
 import { connect } from 'react-redux'
 import { Actions } from '../data/Actions'
 
-class Equipment extends Component {
+class Notes extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = this.context.store.getState();
@@ -29,25 +29,21 @@ class Equipment extends Component {
             <View style={ Styles.container }>
                 <View style={ Styles.container }>
                     <View style={ Styles.container }>
-                        <Text>Regular Equipment</Text>
-                        <TextInput style={ [Styles.container, Styles.topText] } multiline={ true } placeholder={ "Regular Equipment List" } value={ this.character.equipment } onChange= { (event) => { this.onTextChange(event, "equipment"); }}/>
+                        <Text>Journal</Text>
+                        <TextInput style={ [Styles.container, Styles.topText] } multiline={ true } placeholder={ "Enter Journal Notes" } value={ this.character.journal } onChange= { (event) => { this.onTextChange(event, "journal"); }}/>
                     </View>
                     <View style={ Styles.container }>
-                        <Text>Magical Equipment</Text>
-                        <TextInput style={ [Styles.container, Styles.topText] } multiline={ true } placeholder={ "Magical Equipment List" } value={ this.character.magicalequipment } onChange= { (event) => { this.onTextChange(event, "magicalequipment"); }}/>
-                    </View>
-                    <View style={ Styles.container }>
-                        <Text>Weapons & Armor</Text>
-                        <TextInput style={ [Styles.container, Styles.topText] } multiline={ true } placeholder={ "Weapons & Armor List" } value={ this.character.weaponandarmor } onChange= { (event) => { this.onTextChange(event, "weaponandarmor"); }}/>
+                        <Text>Notes</Text>
+                        <TextInput style={ [Styles.container, Styles.topText] } multiline={ true } placeholder={ "Enter General Notes" } value={ this.character.notes } onChange= { (event) => { this.onTextChange(event, "notes"); }}/>
                     </View>
                 </View>
             </View>)
     }
 }
 
-Equipment.contextTypes = {
+Notes.contextTypes = {
     store: React.PropTypes.object
 };
 
-export default Equipment;
-//export default connect()(Equipment)
+export default Notes;
+//export default connect()(Notes)

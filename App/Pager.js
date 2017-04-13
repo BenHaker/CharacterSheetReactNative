@@ -7,6 +7,7 @@ import Battle from './Battle'
 import Equipment from './Equipment'
 import SpellBook from './SpellBook'
 import Treasure from './Treasure'
+import Notes from './Notes'
 
 const styles = StyleSheet.create({ container: { flex: 1 }})
 
@@ -16,7 +17,7 @@ export default class Pager extends Component {
         this.navigator = this.props.navigator;
         this.onPageSelected = this.onPageSelected.bind(this);
         this.currentPage = 0;
-        this.maxPage = 5;
+        this.maxPage = 6;
     }
 
     onPageSelected = (e) => {
@@ -61,6 +62,9 @@ export default class Pager extends Component {
                     </View>
                     <View>
                         <SpellBook/>
+                    </View>
+                    <View>
+                        <Notes/>
                     </View>
                 </ViewPagerAndroid>
                 <ButtonBar ref={ buttonBar => { this.buttonBar = buttonBar; } } navigator= { this.navigator } navigateRight={ this.navigateRight } navigateLeft={ this.navigateLeft } maxPage={ this.maxPage } />
