@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Button, TextInput, StyleSheet, Text  } from 'react-native'
-import CSTextInput from './CSTextInput'
-import { Styles } from './Styles'
+import CSTextInput from '../CSTextInput'
+import { Styles } from '../Styles'
 import { connect } from 'react-redux'
-import { Actions } from '../data/Actions'
+import { Actions } from '../../data/Actions'
 
 class Treasure extends Component {
     constructor(props, context) {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, Button, TextInput, Picker, Alert, StyleSheet  } from 'react-native'
-import CSTextInput from './CSTextInput'
-import { Styles } from './Styles'
+import CSTextInput from '../CSTextInput'
+import { Styles } from '../Styles'
 import { connect } from 'react-redux'
-import { Actions } from '../data/Actions'
-import { Races, Classes } from '../data/MetaData'
-import { isValidateClass } from '../data/Validations'
+import { Actions } from '../../data/Actions'
+import { Races, Classes } from '../../data/MetaData'
+import { isValidateClass } from '../../data/Validations'
 
 class Character extends Component {
     constructor(props, context) {

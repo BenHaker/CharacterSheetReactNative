@@ -64,3 +64,7 @@ export const getTHAC0 = (characterclass, level) => {
             return 19;
     }
 }
+
+export const getAttackBonus = (characterclass, level) => {
+    return 20 - getTHAC0(characterclass, level);
+}

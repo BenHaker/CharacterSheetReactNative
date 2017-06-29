@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, TextInput, StyleSheet, Text  } from 'react-native'
-import { Styles } from './Styles'
+import { Styles } from '../Styles'
 import { connect } from 'react-redux'
-import { Actions } from '../data/Actions'
+import { Actions } from '../../data/Actions'
 
 class Equipment extends Component {
     constructor(props, context) {

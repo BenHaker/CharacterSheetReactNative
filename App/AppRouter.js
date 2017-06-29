@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Navigator, View } from 'react-native'
 import { connect } from 'react-redux'
 import Title from './Title'
-import Pager from './Pager'
+//import Pager from './Pager'
+import SideMenuWrapper from './SideMenuWrapper'
 import CharacterList from './CharacterList'
 
 export default class AppRouter extends Component {
@@ -27,7 +28,8 @@ export default class AppRouter extends Component {
       case "LIST":
         return (<CharacterList navigator={ navigator }/>);
       case "CHARACTER":
-        return (<Pager navigator={ navigator }/>);
+//        return (<Pager navigator={ navigator }/>);
+        return (<SideMenuWrapper navigator={ navigator }/>);
     }
   }
 }

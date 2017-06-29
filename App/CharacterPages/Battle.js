@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Button, TextInput, StyleSheet, Text  } from 'react-native'
-import CSTextInput from './CSTextInput'
-import { Styles } from './Styles'
+import CSTextInput from '../CSTextInput'
+import { Styles } from '../Styles'
 import { connect } from 'react-redux'
-import { Actions } from '../data/Actions'
-import { getTHAC0 } from '../data/Validations'
+import { Actions } from '../../data/Actions'
+import { getTHAC0 } from '../../data/Validations'
 
 export const localStyles = StyleSheet.create({ 
     weaponcontainer: { flexDirection: 'row', alignItems: 'center' }, 

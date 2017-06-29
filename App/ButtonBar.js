@@ -14,6 +14,7 @@ class ButtonBar extends Component {
         super(props, context);
         this.state = this.context.store.getState();
         this.navigator = this.props.navigator;
+        this.toggleSideMenu = this.props.toggleSideMenu;
         this.navigateLeft = this.props.navigateLeft;
         this.navigateRight = this.props.navigateRight;
         this.currentPage = 0;
@@ -68,6 +69,7 @@ class ButtonBar extends Component {
         return (
             <View style={ Styles.container }>
                 { this.renderButton(this.isLeft, this.moveLeft, "<", Styles.smallbutton) }
+                { this.renderButton(null, this.toggleSideMenu, "...", Styles.smallbutton) }
                 { this.renderButton(null, this.backToCharacterList, "Back to List", Styles.largebutton) }
                 { this.renderButton(null, this.deleteCharacter, "Delete", Styles.largebutton) }
                 { this.renderButton(this.isRight, this.moveRight, ">", Styles.smallbutton) }

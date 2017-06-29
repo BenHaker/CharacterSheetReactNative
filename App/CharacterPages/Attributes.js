@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Button, TextInput, Alert, StyleSheet, Text  } from 'react-native'
-import CSTextInput from './CSTextInput'
-import { Styles } from './Styles'
+import CSTextInput from '../CSTextInput'
+import { Styles } from '../Styles'
 import { connect } from 'react-redux'
-import { Actions } from '../data/Actions'
-import { isValidAttribute } from '../data/Validations'
+import { Actions } from '../../data/Actions'
+import { isValidAttribute } from '../../data/Validations'
 
 class Attributes extends Component {
     constructor(props, context) {

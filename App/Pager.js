@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { View, ViewPagerAndroid, StyleSheet  } from 'react-native'
 import ButtonBar from './ButtonBar'
-import Character from './Character'
-import Attributes from './Attributes'
-import Battle from './Battle'
-import Equipment from './Equipment'
-import SpellBook from './SpellBook'
-import Treasure from './Treasure'
-import Notes from './Notes'
+import Character from './CharacterPages/Character'
+import Attributes from './CharacterPages/Attributes'
+import Battle from './CharacterPages/Battle'
+import Equipment from './CharacterPages/Equipment'
+import SpellBook from './CharacterPages/SpellBook'
+import Treasure from './CharacterPages/Treasure'
+import Notes from './CharacterPages/Notes'
 
 const styles = StyleSheet.create({ container: { flex: 1 }})
 
@@ -15,6 +15,7 @@ export default class Pager extends Component {
     constructor(props) {
         super(props);
         this.navigator = this.props.navigator;
+        this.toggleSideMenu = this.props.toggleSideMenu;
         this.onPageSelected = this.onPageSelected.bind(this);
         this.currentPage = 0;
         this.maxPage = 6;
@@ -28,16 +29,18 @@ export default class Pager extends Component {
     navigateRight = () => {
         if(this.currentPage == this.maxPage)
             return;
-        this.viewPager.setPage(this.currentPage + 1);
-        this.currentPage += 1;
-        this.buttonBar.setCurrentPage(this.currentPage);
+        this.setPage(this.currentPage + 1);
     }
 
     navigateLeft = () => {
         if(this.currentPage == 0)
             return;
-        this.viewPager.setPage(this.currentPage - 1);
-        this.currentPage -= 1;
+        this.setPage(this.currentPage - 1);
+    }
+
+    setPage = (page) => {
+        this.currentPage = page;
+        this.viewPager.setPage(page);
         this.buttonBar.setCurrentPage(this.currentPage);
     }
 
@@ -67,7 +70,7 @@ export default class Pager extends Component {
                         <Notes/>
                     </View>
                 </ViewPagerAndroid>
-                <ButtonBar ref={ buttonBar => { this.buttonBar = buttonBar; } } navigator= { this.navigator } navigateRight={ this.navigateRight } navigateLeft={ this.navigateLeft } maxPage={ this.maxPage } />
+                <ButtonBar ref={ buttonBar => { this.buttonBar = buttonBar; } } navigator= { this.navigator } navigateRight={ this.navigateRight } navigateLeft={ this.navigateLeft } maxPage={ this.maxPage } toggleSideMenu= { this.toggleSideMenu }/>
             </View>
         );
   }
